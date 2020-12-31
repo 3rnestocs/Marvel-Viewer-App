@@ -42,22 +42,22 @@ extension MarvelCollection {
     }
 }
 
-//extension DetailViewController {
-//    
-//    func fetchComics(comicUrl: String) {
-//        
-//        service.getComics(resourceUrl: comicUrl) { [self] (result) in
-//            switch result {
-//            case .success(let comicList):
-//                comics += comicList
-//                DispatchQueue.main.async {
-//                    comicCollectionView?.reloadData()
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//        
-//    }
-//    
-//}
+extension DetailViewController {
+    
+    func fetchComics(comicUrl: String) {
+        
+        service.getComics(resourceUrl: comicUrl) { [self] (result) in
+            switch result {
+            case .success(let comicList):
+                comics += comicList
+                DispatchQueue.main.async {
+                    comicCollectionView?.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+    }
+    
+}

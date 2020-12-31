@@ -41,7 +41,7 @@ extension MarvelCollection: UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let character = inSearchMode ? filteredCharacters[indexPath.item] : fullCharacters[indexPath.item]
-//            showDetailView(withCharacter: character)
+            showDetailView(withCharacter: character)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

@@ -84,25 +84,25 @@ class APIManager {
         }
     }
     
-//    func getComics(resourceUrl: String,
-//                           handler: @escaping (Result<[Comics], Error>) -> Void) {
-//
-//        let comicEndpoint = "\(resourceUrl)?\(params)"
-//
-//        AF.request(comicEndpoint).validate().responseComic { (response) in
-//
-//            do {
-//                guard let serverResponse = response.value,
-//                      let comicData = serverResponse.data,
-//                      let comics = comicData.results
-//                else { return }
-//
-//                handler(.success(comics))
-//            } catch {
-//                print("DEBUG ERROR: \(error)")
-//            }
-//        }
-//    }
+    func getComics(resourceUrl: String,
+                           handler: @escaping (Result<[Comics], Error>) -> Void) {
+
+        let comicEndpoint = "\(resourceUrl)?\(params)"
+
+        AF.request(comicEndpoint).validate().responseComic { (response) in
+
+            do {
+                guard let serverResponse = response.value,
+                      let comicData = serverResponse.data,
+                      let comics = comicData.results
+                else { return }
+
+                handler(.success(comics))
+            } catch {
+                print("DEBUG ERROR: \(error)")
+            }
+        }
+    }
 }
 
 extension DataRequest {
@@ -112,8 +112,8 @@ extension DataRequest {
         return responseDecodable(queue: queue ?? .main, completionHandler: completionHandler)
     }
     
-//    @discardableResult
-//    func responseComic(queue: DispatchQueue? = nil, completionHandler: @escaping (AFDataResponse<ComicResponse>) -> Void) -> Self {
-//        return responseDecodable(queue: queue ?? .main, completionHandler: completionHandler)
-//    }
+    @discardableResult
+    func responseComic(queue: DispatchQueue? = nil, completionHandler: @escaping (AFDataResponse<ComicResponse>) -> Void) -> Self {
+        return responseDecodable(queue: queue ?? .main, completionHandler: completionHandler)
+    }
 }

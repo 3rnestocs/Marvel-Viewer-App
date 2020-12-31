@@ -10,13 +10,13 @@ import UIKit
 extension MarvelCollection {
     
     //MARK: - DetailView push
-//    func showDetailView(withCharacter character: Characters) {
-//
-////        let detailVC = DetailViewController()
-//        detailVC.character  = character
-//        self.navigationController?.pushViewController(detailVC,
-//                                                      animated: true)
-//    }
+    func showDetailView(withCharacter character: Characters) {
+
+        let detailVC = DetailViewController()
+        detailVC.character  = character
+        self.navigationController?.pushViewController(detailVC,
+                                                      animated: true)
+    }
     
     //MARK: - Searchbar config
     func configureSearchBar(showSearch: Bool) {
