@@ -11,34 +11,34 @@ extension MarvelCollection {
     
     func fetchMarvelCharacters() {
         
-//        service.getCharacters(shouldPage: false) { [self] (charList) in
-//
-//            if !charList.isEmpty {
-//
-//                firstCharacters = charList
-//                fullCharacters += firstCharacters
-//                print("---Got all Heroes and Villains correctly. Ready to load more---")
-//
-//                DispatchQueue.main.async {
-//                    collViewHeroes?.reloadData()
-//                }
-//            }
-//        }
+        service.getCharacters(shouldPage: false) { [self] (charList) in
+
+            if !charList.isEmpty {
+
+                firstCharacters = charList
+                fullCharacters += firstCharacters
+                print("---Got all Heroes and Villains correctly. Ready to load more---")
+
+                DispatchQueue.main.async {
+                    collViewHeroes?.reloadData()
+                }
+            }
+        }
     }
     
     func fetchMoreCharacters(indexPath: IndexPath) {
         
-//        if indexPath.item == fullCharacters.count - 1  {
-//            service.getCharacters(shouldPage: true) { [self] (moreChars) in
-//
-//                moreCharacters = moreChars
-//                fullCharacters += moreCharacters
-//
-//                DispatchQueue.main.async {
-//                    collViewHeroes?.reloadData()
-//                }
-//            }
-//        }
+        if indexPath.item == fullCharacters.count - 1  {
+            service.getCharacters(shouldPage: true) { [self] (moreChars) in
+
+                moreCharacters = moreChars
+                fullCharacters += moreCharacters
+
+                DispatchQueue.main.async {
+                    collViewHeroes?.reloadData()
+                }
+            }
+        }
     }
 }
 

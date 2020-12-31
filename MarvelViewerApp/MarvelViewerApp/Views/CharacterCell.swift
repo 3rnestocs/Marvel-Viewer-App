@@ -5,9 +5,8 @@
 //  Created by Ernesto Jose Contreras Lopez on 11/19/20.
 //
 
-//import LBTATools
 import UIKit
-//import Kingfisher
+import Kingfisher
 
 class CharactersCell: UICollectionViewCell {
     
@@ -21,8 +20,8 @@ class CharactersCell: UICollectionViewCell {
             if name == characters?.name {
                 firstLabel.text = name.capitalized
 
-//                firstImage.kf.indicatorType = .activity
-//                firstImage.kf.setImage(with: URL(string: thumbnailUrl+".\(ext)"))
+                firstImage.kf.indicatorType = .activity
+                firstImage.kf.setImage(with: URL(string: thumbnailUrl+".\(ext)"))
 
             } else {
                 firstLabel.text = "Ernesto"

@@ -4,7 +4,7 @@
 //
 //  Created by Ernesto Jose Contreras Lopez on 11/23/20.
 
-//let service = APIManager()
+let service = APIManager()
 let characterReuseIdentifier  = "charactersId"
 let comicReuseIdentifier  = "comicsId"
 
