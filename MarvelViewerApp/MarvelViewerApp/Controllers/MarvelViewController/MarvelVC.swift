@@ -15,15 +15,9 @@ class MarvelCollection: UIViewController {
     var fullCharacters  = [Characters]()
     
     var filteredCharacters = [Characters]()
+    let commonViews = CommonViews()
     var searchBar = UISearchBar()
     var inSearchMode = false
-    
-    var viewMarvel: UIView? = {
-        
-        let view = UIView()
-        view.backgroundColor = Colors.mainBlack
-        return view
-    }()
     
     var collViewHeroes: UICollectionView? = {
 
@@ -37,14 +31,6 @@ class MarvelCollection: UIViewController {
                     withReuseIdentifier: "header")
         cv.backgroundColor = Colors.mainRed
         return cv
-    }()
-    
-    var imgViewLogo: UIImageView? = {
-        
-        let logo = UIImageView()
-        logo.image = UIImage(named: "logo")
-        logo.contentMode = .scaleAspectFill
-        return logo
     }()
     
     // MARK: - Selectors
