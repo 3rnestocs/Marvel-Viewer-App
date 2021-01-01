@@ -23,6 +23,12 @@ extension DetailViewController: UICollectionViewDataSource,
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let comic = comics[indexPath.item]
+        
+        showComicDetails(withComic: comic)
+    }
 }
 
 extension DetailViewController: UICollectionViewDelegateFlowLayout {

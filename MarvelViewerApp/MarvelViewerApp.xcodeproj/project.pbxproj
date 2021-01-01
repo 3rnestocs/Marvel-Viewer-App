@@ -30,6 +30,7 @@
 		8DFCD9A2259E9967006184CF /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCD99F259E9967006184CF /* DetailVC.swift */; };
 		8DFCD9A5259E997C006184CF /* ComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCD9A4259E997B006184CF /* ComicCell.swift */; };
 		8DFCD9A8259E9995006184CF /* DetailViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCD9A7259E9995006184CF /* DetailViews.swift */; };
+		8DFCD9AE259E9D31006184CF /* ComicDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCD9AD259E9D31006184CF /* ComicDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		8DFCD99F259E9967006184CF /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		8DFCD9A4259E997B006184CF /* ComicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicCell.swift; sourceTree = "<group>"; };
 		8DFCD9A7259E9995006184CF /* DetailViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViews.swift; sourceTree = "<group>"; };
+		8DFCD9AD259E9D31006184CF /* ComicDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicDetailVC.swift; sourceTree = "<group>"; };
 		8F6FB13F13739C75C34503FB /* Pods_MarvelViewerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelViewerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 				8D83D53C259E160D00DA3D77 /* Model */,
 				8D83D53B259E160A00DA3D77 /* Views */,
 				8D83D53A259E160900DA3D77 /* Controllers */,
+				8DFCD9AC259E9D31006184CF /* ComicDetailViewController */,
 				8D83D539259E160200DA3D77 /* Utils */,
 			);
 			path = MarvelViewerApp;
@@ -209,6 +212,14 @@
 				8DFCD99D259E9967006184CF /* DetailVCMethods.swift */,
 			);
 			path = DetailViewController;
+			sourceTree = "<group>";
+		};
+		8DFCD9AC259E9D31006184CF /* ComicDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCD9AD259E9D31006184CF /* ComicDetailVC.swift */,
+			);
+			path = ComicDetailViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +349,7 @@
 				8D83D564259E1E5500DA3D77 /* MarvelViews.swift in Sources */,
 				8D83D54E259E1D2700DA3D77 /* MarvelVCDatasource.swift in Sources */,
 				8DFCD9A1259E9967006184CF /* DetailVCDatasource.swift in Sources */,
+				8DFCD9AE259E9D31006184CF /* ComicDetailVC.swift in Sources */,
 				8D83D54F259E1D2700DA3D77 /* MarvelVCMethods.swift in Sources */,
 				8DFCD9A8259E9995006184CF /* DetailViews.swift in Sources */,
 				8D83D55C259E1DA400DA3D77 /* ControllerCalls.swift in Sources */,
