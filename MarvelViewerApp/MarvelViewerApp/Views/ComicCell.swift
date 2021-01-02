@@ -9,6 +9,7 @@ import UIKit
 
 class ComicCell: UICollectionViewCell {
     
+    //MARK: - Properties
     var comics: Comics? {
         didSet {
             guard let comic = comics,

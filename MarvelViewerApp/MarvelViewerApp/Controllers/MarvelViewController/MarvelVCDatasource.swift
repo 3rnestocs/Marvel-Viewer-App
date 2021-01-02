@@ -32,7 +32,7 @@ extension MarvelCollection: UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: characterReuseIdentifier, for: indexPath) as! CharactersCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CharactersCell
 
         cell.characters = inSearchMode ? filteredCharacters[indexPath.item] : fullCharacters[indexPath.item]
         

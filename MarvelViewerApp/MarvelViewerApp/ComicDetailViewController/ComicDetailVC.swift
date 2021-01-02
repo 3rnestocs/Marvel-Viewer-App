@@ -12,41 +12,54 @@ class ComicDetailViewController: UIViewController {
     var comic: Comics?
     let commonViews = CommonViews()
     
-    lazy var headerSectionView: UIView? = {
-       let view = UIView()
-        view.backgroundColor = Colors.mainRed
-        return view
+    var bioTextView: UITextView? = {
+       let textView = UITextView()
+        textView.textColor = Colors.mainBlack
+        textView.text = "Test with the biography"
+        textView.font = UIFont.systemFont(ofSize: 16)
+        textView.backgroundColor = .clear
+        textView.isUserInteractionEnabled = true
+        textView.isEditable = false
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
     }()
     
-    lazy var nameContainerView: UIView? = {
+    var comicImage: UIImageView? = {
+        let img = UIImageView()
+        img.contentMode = .scaleAspectFill
+        img.image = UIImage(named: "logo")
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.clipsToBounds = true
+        return img
+    }()
+    
+    var textContainerView: UIView = {
        let view = UIView()
         view.backgroundColor = Colors.mainBlack
-        view.alpha = 0.85
-        view.addSubview(nameLabel!)
-        nameLabel?.center(inView: view)
+        view.alpha = 0.8
         return view
     }()
     
-    var nameLabel: UILabel? = {
+    var titleLabel: UILabel? = {
        let label = UILabel()
         label.text = "Testing text"
         label.adjustsFontSizeToFitWidth = true
         label.textColor = Colors.mainGray
+        label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "AmericanCaptain", size: 45)
         return label
     }()
     
-    var characterImage: UIImageView? = {
-        let img = UIImageView()
-        img.contentMode = .scaleAspectFill
-        img.clipsToBounds = true
-        return img
-    }()
+    let creatorsLabel = UILabel()
+    var creatorNames = String()
+    let formatLabel = UILabel()
+    let idLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setComicDetailViews()
+        setUpComicData()
     }
 }

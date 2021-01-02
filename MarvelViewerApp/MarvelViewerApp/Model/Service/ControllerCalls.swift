@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - MarvelVC
 extension MarvelCollection {
     
     func fetchMarvelCharacters() {
@@ -42,6 +43,7 @@ extension MarvelCollection {
     }
 }
 
+//MARK: - DetailVC
 extension DetailViewController {
     
     func fetchComics(comicUrl: String) {

@@ -7,9 +7,9 @@
 
 import UIKit
 
-// MARK: - MarvelColletion views
 extension MarvelCollection {
     
+    //MARK: - NavBar
     func configureNavigationBar() {
         
         navigationController?.navigationBar.isTranslucent = false
@@ -20,6 +20,7 @@ extension MarvelCollection {
         configureSearchBarButton()
     }
     
+    //MARK: - SearchBarButton
     func configureSearchBarButton() {
 
         let searchBtn = UIButton(type: .system)
@@ -33,11 +34,12 @@ extension MarvelCollection {
         navigationItem.setRightBarButton(search, animated: true)
     }
     
+    //MARK: - CollectionView
     func setMarvelCollectionViews() {
         
         configureNavigationBar()
         
-        commonViews.setCommonViews(parentView: view)
+        commonViews.setCopyrightViews(parentView: view)
         
         /// Create the CollectionView and add it inside the mainView safely
         guard let collViewHeroes  = collViewHeroes else { return }

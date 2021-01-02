@@ -5,8 +5,7 @@
 //  Created by Ernesto Jose Contreras Lopez on 11/23/20.
 
 let service = APIManager()
-let characterReuseIdentifier  = "charactersId"
-let comicReuseIdentifier  = "comicsId"
+let reuseIdentifier  = "reuseIdentifier"
 
 let params = "ts=9&apikey=a2f7ee121119dda6f1c8572498029c59&hash=9da5f544ec77b7cfa3526f2bdba5e9df"
 let withoutImage = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"

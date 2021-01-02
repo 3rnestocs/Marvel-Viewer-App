@@ -7,17 +7,20 @@
 
 import Foundation
 
+//MARK: - CharacterResponse
 struct Response: Codable {
     var code: Int?
     var status, attributionText: String?
     var data: MarvelData?
 }
 
+//MARK: - CharacterArray
 struct MarvelData: Codable {
     let count, limit, offset: Int?
     let results: [Characters]?
 }
 
+//MARK: - CharacterModel
 class Characters: Codable {
     var id: Int?
     var name, descript: String?
@@ -31,49 +34,54 @@ class Characters: Codable {
     }
 }
 
-struct Images: Codable {
-    let path, `extension`: String?
-}
-
 struct Url: Codable {
     let type, url: String?
 }
 
-struct ResourceList: Codable {
-    let available, returned: Int?
-    let collectionUrl: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case available, returned
-        case collectionUrl = "collectionURI"
-    }
-}
-
 struct Item: Codable {
-    let resourceURI, name: String?
+    let resourceURI, name, role: String?
 }
 
+//MARK: - ComicResponse
 struct ComicResponse: Codable {
     var code: Int?
     var status: String?
     var data: ComicData?
 }
 
+//MARK: - ComicArray
 struct ComicData: Codable {
     let results: [Comics]?
 }
 
+//MARK: - ComicModel
 class Comics: Codable {
     
     var id: Int?
-    var title, descript: String?
+    var title, descript, alternative, format: String?
+    var creators: ResourceList?
     var thumbnail: Images?
     var images: [Images]?
     
     enum CodingKeys: String, CodingKey {
-        case id, title, thumbnail, images
+        case id, title, thumbnail, images, format, creators
         case descript = "description"
+        case alternative = "variantDescription"
     }
 }
 
+//MARK: - Images
+struct Images: Codable {
+    let path, `extension`: String?
+}
 
+struct ResourceList: Codable {
+    let available, returned: Int?
+    let items: [Item]?
+    let collectionUrl: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case available, returned, items
+        case collectionUrl = "collectionURI"
+    }
+}

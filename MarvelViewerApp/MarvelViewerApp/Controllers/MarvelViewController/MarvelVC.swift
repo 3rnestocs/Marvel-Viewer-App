@@ -25,7 +25,7 @@ class MarvelCollection: UIViewController {
         let cv = UICollectionView(frame: .zero,
                                   collectionViewLayout: layout)
         cv.register(CharactersCell.self,
-                    forCellWithReuseIdentifier: characterReuseIdentifier)
+                    forCellWithReuseIdentifier: reuseIdentifier)
         cv.register(CollectionViewHeader.self,
                     forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                     withReuseIdentifier: "header")

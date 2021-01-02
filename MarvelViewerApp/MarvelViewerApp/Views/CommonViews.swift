@@ -9,7 +9,8 @@ import UIKit
 
 class CommonViews: UIViewController {
     
-    var imgViewLogo: UIImageView = {
+    //MARK: - Properties
+    var logoImageView: UIImageView = {
         
         let logo = UIImageView()
         logo.image = UIImage(named: "logo")
@@ -29,18 +30,18 @@ class CommonViews: UIViewController {
         return label
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-    }
+    var commonSectionView: UIView = {
+       let view = UIView()
+        view.backgroundColor = Colors.mainWhite
+        return view
+    }()
     
-    func setCommonViews(parentView: UIView) {
+    func setCopyrightViews(parentView: UIView) {
         
         //MARK: - Common Logo
-        parentView.addSubview(imgViewLogo)
+        parentView.addSubview(logoImageView)
         
-        imgViewLogo.anchor(top: parentView.safeAreaLayoutGuide.topAnchor, paddingTop: 28, bottom: nil,
+        logoImageView.anchor(top: parentView.safeAreaLayoutGuide.topAnchor, paddingTop: 22, bottom: nil,
                            paddingBottom: 0, left: parentView.leftAnchor, paddingLeft: 0,
                            right: parentView.rightAnchor, paddingRight: 0,
                            width: 0, height: view.frame.height/6)
@@ -49,5 +50,18 @@ class CommonViews: UIViewController {
         parentView.addSubview(creditsLabel)
             
         creditsLabel.anchor(top: nil, paddingTop: 0, bottom: parentView.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 0, left: parentView.leftAnchor, paddingLeft: 0, right: parentView.rightAnchor, paddingRight: 0, width: 0, height: 20)
+    }
+    
+    func setCommonDesignViews(parentView: UIView) {
+        
+        parentView.addSubview(commonSectionView)
+        
+        commonSectionView.anchor(top: logoImageView.bottomAnchor, paddingTop: 20,
+                                 bottom: creditsLabel.topAnchor, paddingBottom: 20,
+                                 left: parentView.leftAnchor, paddingLeft: 0,
+                                 right: parentView.rightAnchor, paddingRight: 0,
+                                 width: 0, height: 0)
+        
+        
     }
 }
