@@ -59,12 +59,12 @@ class Comics: Codable {
     
     var id: Int?
     var title, descript, alternative, format: String?
-    var creators: ResourceList?
+    var creators, characters: ResourceList?
     var thumbnail: Images?
     var images: [Images]?
     
     enum CodingKeys: String, CodingKey {
-        case id, title, thumbnail, images, format, creators
+        case id, title, thumbnail, images, format, creators, characters
         case descript = "description"
         case alternative = "variantDescription"
     }

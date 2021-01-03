@@ -103,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				8D83D522259E15B600DA3D77 /* MarvelViewerApp */,
+				8D83D539259E160200DA3D77 /* Utils */,
 				8D83D521259E15B600DA3D77 /* Products */,
 				237DE59BB696E99CDA73B32D /* Pods */,
 				060B336D633FCB95976C16D0 /* Frameworks */,
@@ -126,8 +127,6 @@
 				8D83D53C259E160D00DA3D77 /* Model */,
 				8D83D53B259E160A00DA3D77 /* Views */,
 				8D83D53A259E160900DA3D77 /* Controllers */,
-				8DFCD9AC259E9D31006184CF /* ComicDetailViewController */,
-				8D83D539259E160200DA3D77 /* Utils */,
 			);
 			path = MarvelViewerApp;
 			sourceTree = "<group>";
@@ -149,6 +148,7 @@
 			children = (
 				8D83D53D259E162A00DA3D77 /* MarvelViewController */,
 				8DFCD99C259E9936006184CF /* DetailViewController */,
+				8DFCD9AC259E9D31006184CF /* ComicDetailViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

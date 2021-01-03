@@ -41,7 +41,7 @@ class CommonViews: UIViewController {
         //MARK: - Common Logo
         parentView.addSubview(logoImageView)
         
-        logoImageView.anchor(top: parentView.safeAreaLayoutGuide.topAnchor, paddingTop: 22, bottom: nil,
+        logoImageView.anchor(top: parentView.safeAreaLayoutGuide.topAnchor, paddingTop: 20, bottom: nil,
                            paddingBottom: 0, left: parentView.leftAnchor, paddingLeft: 0,
                            right: parentView.rightAnchor, paddingRight: 0,
                            width: 0, height: view.frame.height/6)
@@ -61,7 +61,5 @@ class CommonViews: UIViewController {
                                  left: parentView.leftAnchor, paddingLeft: 0,
                                  right: parentView.rightAnchor, paddingRight: 0,
                                  width: 0, height: 0)
-        
-        
     }
 }

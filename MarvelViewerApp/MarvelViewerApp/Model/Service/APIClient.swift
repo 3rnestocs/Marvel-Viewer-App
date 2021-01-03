@@ -10,7 +10,7 @@ import Alamofire
 class APIManager {
     
     let baseUrl = "https://gateway.marvel.com/v1/public/characters"
-    let limit = 40
+    let limit = 50
     var offset = 0
     
     typealias CharactersCallback = ([Characters]) -> Void

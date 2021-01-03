@@ -49,8 +49,13 @@ extension MarvelCollection {
         collViewHeroes.delegate   = self
         collViewHeroes.frame      = view.bounds
         
-        collViewHeroes.anchor(top: nil, paddingTop: 0, bottom: view.safeAreaLayoutGuide.bottomAnchor,
-                        paddingBottom: 30, left: view.leftAnchor, paddingLeft: 0,
-                        right: view.rightAnchor, paddingRight: 0, width: 0, height: view.frame.height/1.68)
+        let commonLogo = commonViews.logoImageView
+        let commonCredits = commonViews.creditsLabel
+        
+        collViewHeroes.anchor(top: commonLogo.bottomAnchor, paddingTop: 20,
+                              bottom: commonCredits.topAnchor, paddingBottom: 10,
+                              left: view.leftAnchor, paddingLeft: 0,
+                              right: view.rightAnchor, paddingRight: 0,
+                              width: 0, height: 0)
     }
 }

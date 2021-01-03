@@ -47,27 +47,28 @@ extension ComicDetailViewController {
                            right: sectionView.rightAnchor, paddingRight: 20,
                            width: 0, height: 0)
         
-        textContainerView.addSubview(formatLabel)
-        formatLabel.anchor(top: textContainerView.topAnchor, paddingTop: 30,
-                           bottom: nil, paddingBottom: 0,
-                           left: textContainerView.leftAnchor, paddingLeft: 20,
-                           right: textContainerView.rightAnchor, paddingRight: 20,
-                           width: 0, height: 0)
-        
-        textContainerView.addSubview(creatorsLabel)
-        creatorsLabel.anchor(top: formatLabel.bottomAnchor, paddingTop: 10,
-                             bottom: nil, paddingBottom: 0,
-                             left: textContainerView.leftAnchor, paddingLeft: 20,
-                             right: textContainerView.rightAnchor, paddingRight: 20,
-                             width: 0, height: 0)
-        
         textContainerView.addSubview(idLabel)
-        idLabel.anchor(top: creatorsLabel.bottomAnchor, paddingTop: 10,
+        idLabel.anchor(top: textContainerView.topAnchor, paddingTop: 15,
                        bottom: nil, paddingBottom: 0,
                        left: textContainerView.leftAnchor, paddingLeft: 20,
                        right: textContainerView.rightAnchor, paddingRight: 20,
                        width: 0, height: 0)
         
+        textContainerView.addSubview(creatorsLabel)
+        creatorsLabel.numberOfLines = 0
+        creatorsLabel.anchor(top: idLabel.bottomAnchor, paddingTop: 10,
+                             bottom: nil, paddingBottom: 0,
+                             left: textContainerView.leftAnchor, paddingLeft: 20,
+                             right: textContainerView.rightAnchor, paddingRight: 20,
+                             width: 0, height: 0)
+        
+        textContainerView.addSubview(charactersLabel)
+        charactersLabel.numberOfLines = 0
+        charactersLabel.anchor(top: creatorsLabel.bottomAnchor, paddingTop: 10,
+                               bottom: nil, paddingBottom: 0,
+                               left: textContainerView.leftAnchor, paddingLeft: 20,
+                               right: textContainerView.rightAnchor, paddingRight: 20,
+                               width: 0, height: 0)
     }
     
     func configureLabel(label: UILabel, title: String, details: String) {

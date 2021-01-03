@@ -36,6 +36,7 @@ class MarvelCollection: UIViewController {
     // MARK: - Selectors
     @objc func searchButtonClicked() {
         configureSearchBar(showSearch: true)
+ 
     }
     
     // MARK: - Init stuff

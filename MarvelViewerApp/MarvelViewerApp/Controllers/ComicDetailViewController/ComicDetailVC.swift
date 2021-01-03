@@ -15,7 +15,6 @@ class ComicDetailViewController: UIViewController {
     var bioTextView: UITextView? = {
        let textView = UITextView()
         textView.textColor = Colors.mainBlack
-        textView.text = "Test with the biography"
         textView.font = UIFont.systemFont(ofSize: 16)
         textView.backgroundColor = .clear
         textView.isUserInteractionEnabled = true
@@ -52,8 +51,7 @@ class ComicDetailViewController: UIViewController {
     }()
     
     let creatorsLabel = UILabel()
-    var creatorNames = String()
-    let formatLabel = UILabel()
+    let charactersLabel = UILabel()
     let idLabel = UILabel()
     
     override func viewDidLoad() {
