@@ -7,9 +7,9 @@
 
 import Foundation
 
-//MARK: - DetailVC views
 extension DetailViewController {
     
+    //MARK: - General Views
     func configureDetailViews() {
         
         /// Safely adding all the components of the Detail View

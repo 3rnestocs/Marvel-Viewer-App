@@ -9,6 +9,15 @@ import UIKit
 
 extension DetailViewController {
     
+    //MARK: - ComicDetailView push
+    func showComicDetails(withComic comic: Comics) {
+
+        let comicDetailVC = ComicDetailViewController()
+        comicDetailVC.comic = comic
+        self.navigationController?.pushViewController(comicDetailVC,
+                                                      animated: true)
+    }
+    
     func setUpCharactersData() {
         
         guard let character = character,

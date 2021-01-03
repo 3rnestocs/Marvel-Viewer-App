@@ -15,15 +15,9 @@ class MarvelCollection: UIViewController {
     var fullCharacters  = [Characters]()
     
     var filteredCharacters = [Characters]()
+    let commonViews = CommonViews()
     var searchBar = UISearchBar()
     var inSearchMode = false
-    
-    var viewMarvel: UIView? = {
-        
-        let view = UIView()
-        view.backgroundColor = Colors.mainBlack
-        return view
-    }()
     
     var collViewHeroes: UICollectionView? = {
 
@@ -31,7 +25,7 @@ class MarvelCollection: UIViewController {
         let cv = UICollectionView(frame: .zero,
                                   collectionViewLayout: layout)
         cv.register(CharactersCell.self,
-                    forCellWithReuseIdentifier: characterReuseIdentifier)
+                    forCellWithReuseIdentifier: reuseIdentifier)
         cv.register(CollectionViewHeader.self,
                     forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                     withReuseIdentifier: "header")
@@ -39,17 +33,10 @@ class MarvelCollection: UIViewController {
         return cv
     }()
     
-    var imgViewLogo: UIImageView? = {
-        
-        let logo = UIImageView()
-        logo.image = UIImage(named: "logo")
-        logo.contentMode = .scaleAspectFill
-        return logo
-    }()
-    
     // MARK: - Selectors
     @objc func searchButtonClicked() {
         configureSearchBar(showSearch: true)
+ 
     }
     
     // MARK: - Init stuff

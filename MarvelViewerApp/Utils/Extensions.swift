@@ -59,6 +59,15 @@ extension UIFont {
     }
 }
 
+extension String {
+    
+    var withoutHtmlTags: String {
+    return self.replacingOccurrences(of: "<[^>]+>", with: "", options:
+    .regularExpression, range: nil).replacingOccurrences(of: "&[^;]+;", with:
+    "", options:.regularExpression, range: nil)
+    }
+}
+
 //MARK: - Custom Colors
 enum Colors {
     static let mainWhite    = UIColor(hex: "#F4F4F4ff")

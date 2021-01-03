@@ -9,7 +9,7 @@ import UIKit
 
 extension MarvelCollection {
     
-    //MARK: - DetailView push
+    //MARK: - Push to DetailVC
     func showDetailView(withCharacter character: Characters) {
 
         let detailVC = DetailViewController()
@@ -18,7 +18,7 @@ extension MarvelCollection {
                                                       animated: true)
     }
     
-    //MARK: - Searchbar config
+    //MARK: - SearchBar setup
     func configureSearchBar(showSearch: Bool) {
         
         searchBar.tintColor = Colors.mainRed

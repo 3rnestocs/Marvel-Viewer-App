@@ -113,7 +113,7 @@ class DetailViewController: UIViewController {
         let cv = UICollectionView(frame: .zero,
                                   collectionViewLayout: layout)
         cv.register(ComicCell.self,
-                    forCellWithReuseIdentifier: comicReuseIdentifier)
+                    forCellWithReuseIdentifier: reuseIdentifier)
         cv.layer.cornerRadius = 12
         layout.scrollDirection = .horizontal
         cv.alwaysBounceHorizontal = true

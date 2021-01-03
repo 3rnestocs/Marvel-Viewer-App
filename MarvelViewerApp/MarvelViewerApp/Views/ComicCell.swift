@@ -9,11 +9,13 @@ import UIKit
 
 class ComicCell: UICollectionViewCell {
     
+    //MARK: - Properties
     var comics: Comics? {
         didSet {
             guard let comic = comics,
                   let title = comic.title,
                   let thumbnail = comic.thumbnail?.path,
+                  let creators = comic.creators,
                   let ext = comic.thumbnail?.extension,
                   let images = comic.images
             else { return }
@@ -21,7 +23,7 @@ class ComicCell: UICollectionViewCell {
             comicLabel.text = title.capitalized
             comicImage.kf.indicatorType = .activity
             
-            if thumbnail != withoutImage && title == comics?.title {
+            if thumbnail != withoutImage && title == comics?.title && creators.items?.count != 0 {
                 comicImage.kf.setImage(with: URL(string: thumbnail+".\(ext)"))
             } else {
                 if images.count != 0 {

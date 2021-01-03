@@ -61,6 +61,7 @@ class CharactersCell: UICollectionViewCell {
     }
 }
 
+//MARK: - ReusableView
 class CollectionViewHeader: UICollectionReusableView {
     
     var collectionViewTitle: UIImageView? = {

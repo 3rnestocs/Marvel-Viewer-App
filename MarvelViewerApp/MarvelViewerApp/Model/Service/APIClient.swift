@@ -10,11 +10,12 @@ import Alamofire
 class APIManager {
     
     let baseUrl = "https://gateway.marvel.com/v1/public/characters"
-    let limit = 40
+    let limit = 50
     var offset = 0
     
     typealias CharactersCallback = ([Characters]) -> Void
     
+    //MARK: - Fetch Characters
     func getCharacters(shouldPage: Bool,
                        handler: @escaping CharactersCallback) {
         
@@ -43,6 +44,7 @@ class APIManager {
         }
     }
     
+    //MARK: - Build URL
     private func buildUrl(shouldPage: Bool = false) -> String {
         
         var endpoint = "\(baseUrl)?\(params)&limit=\(limit)"
@@ -54,6 +56,7 @@ class APIManager {
         return endpoint
     }
 
+    //MARK: - Common Call
     private func mainApiCall(mainList: [Characters], endpoint: String,
                      handler: @escaping (Result<[Characters], Error>) -> Void) {
         
@@ -84,6 +87,7 @@ class APIManager {
         }
     }
     
+    //MARK: - Fetch Comics
     func getComics(resourceUrl: String,
                            handler: @escaping (Result<[Comics], Error>) -> Void) {
 
@@ -107,6 +111,7 @@ class APIManager {
 
 extension DataRequest {
 
+    //MARK: - Decoder extension
     @discardableResult
     func responseMarvel(queue: DispatchQueue? = nil, completionHandler: @escaping (AFDataResponse<Response>) -> Void) -> Self {
         return responseDecodable(queue: queue ?? .main, completionHandler: completionHandler)
