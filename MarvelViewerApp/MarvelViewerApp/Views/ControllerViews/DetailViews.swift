@@ -107,11 +107,14 @@ extension DetailViewController {
                         paddingBottom: 0, left: comicTitleContainerView.leftAnchor, paddingLeft: 20,
                         right: comicTitleContainerView.rightAnchor, paddingRight: 0,
                         width: 0, height: 0)
+    }
+    
+    func configureComicCollection() {
         
-        comicCollectionView.anchor(top: comicTitleContainerView.bottomAnchor, paddingTop: 10,
-                                   bottom: comicContainerView.bottomAnchor, paddingBottom: 10,
-                                   left: comicContainerView.leftAnchor, paddingLeft: 6,
-                                   right: comicContainerView.rightAnchor, paddingRight: 12,
+        comicCollectionView!.anchor(top: comicTitleContainerView!.bottomAnchor, paddingTop: 10,
+                                   bottom: comicContainerView!.bottomAnchor, paddingBottom: 10,
+                                   left: comicContainerView!.leftAnchor, paddingLeft: 6,
+                                   right: comicContainerView!.rightAnchor, paddingRight: 12,
                                    width: 0, height: 0)
     }
 }

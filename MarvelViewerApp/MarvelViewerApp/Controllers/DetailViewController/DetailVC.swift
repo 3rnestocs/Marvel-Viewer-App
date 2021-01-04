@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     //MARK: - Properties
     var character: Characters?
     var comics = [Comics]()
+    let commonViews = CommonViews()
     
     /// HEADER SECTION STUFF
     var imgViewLogo: UIImageView? = {

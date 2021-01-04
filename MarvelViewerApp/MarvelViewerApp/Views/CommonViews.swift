@@ -36,6 +36,17 @@ class CommonViews: UIViewController {
         return view
     }()
     
+    var commonLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "AmericanCaptain", size: 45)
+        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 0
+        label.textColor = Colors.mainBlack
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        return label
+    }()
+    
     func setCopyrightViews(parentView: UIView) {
         
         //MARK: - Common Logo
@@ -61,5 +72,16 @@ class CommonViews: UIViewController {
                                  left: parentView.leftAnchor, paddingLeft: 0,
                                  right: parentView.rightAnchor, paddingRight: 0,
                                  width: 0, height: 0)
+    }
+    
+    func displayErrorLabel(parentView: UIView, top: UIView, containerView: UIView) {
+        
+        parentView.addSubview(commonLabel)
+        
+        commonLabel.anchor(top: top.bottomAnchor, paddingTop: 10,
+                           bottom: containerView.bottomAnchor, paddingBottom: 10,
+                           left: containerView.leftAnchor, paddingLeft: 30,
+                           right: containerView.rightAnchor, paddingRight: 30,
+                           width: 0, height: 0)
     }
 }

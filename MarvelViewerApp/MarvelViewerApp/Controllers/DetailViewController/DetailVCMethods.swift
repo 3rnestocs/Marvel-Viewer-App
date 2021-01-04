@@ -25,7 +25,8 @@ extension DetailViewController {
               let description = character.descript,
               let urls = character.urls,
               let wiki = urls[1].url,
-              let comicUrl = character.comics?.collectionUrl,
+              let comics = character.comics,
+              let comicUrl = comics.collectionUrl,
               let thumbnailUrl = character.thumbnail?.path,
               let ext = character.thumbnail?.extension
         else { return }
@@ -33,7 +34,6 @@ extension DetailViewController {
         fetchComics(comicUrl: comicUrl)
         
         let noDescriptionMsg = "This character doesn't have a description. You can get updated information in this link:  "
-        
         
         let plainAttributedString = NSMutableAttributedString(string: noDescriptionMsg, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16)])
         let linkString = "Wiki"
@@ -60,6 +60,13 @@ extension DetailViewController {
         DispatchQueue.main.async { [self] in
             characterImage?.kf.indicatorType = .activity
             characterImage?.kf.setImage(with: URL(string: thumbnailUrl+".\(ext)"))
-        }   
+        }
+        
+        if comics.items?.count == 0 {
+            commonViews.displayErrorLabel(parentView: view, top: comicTitleContainerView!, containerView: comicContainerView!)
+            commonViews.commonLabel.text = "This character doesn't have available comics"
+        } else {
+            configureComicCollection()
+        }
     }
 }
